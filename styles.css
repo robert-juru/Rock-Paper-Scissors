@@ -1,0 +1,498 @@
+body,
+html {
+  height: 80%;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  background-image: url(img/background6.gif);
+  background-size: 2000px 1000px;
+}
+
+.foto {
+  max-height: 500px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-contor {
+  display: flex;
+  padding-top: 20px;
+  flex: 1 1 0;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Press Start 2P", cursive;
+  color: gainsboro;
+}
+.player-contor,
+.computer-contor {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  height: 2rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3),
+    -2px -2px 3px rgba(255, 255, 255, 0.1), inset 2px 2px 3px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 3px rgba(255, 255, 255, 0.2), 0 0 1px rgba(0, 0, 0, 0.5),
+    0 0 5px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 15px 15px;
+}
+.player-contor {
+  background-color: #0077be;
+}
+.computer-contor {
+  background-color: #d62b3c;
+}
+
+.title {
+  font-size: 54px;
+  margin-bottom: 280px;
+  text-transform: uppercase;
+  animation: move 1.2s ease-in infinite;
+  letter-spacing: 0.3rem;
+  text-shadow: 3px 3px 6px #000000;
+}
+
+.subtitle {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: rotate(1deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(-1deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(-1deg);
+  }
+  80% {
+    transform: rotate(1deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-1deg);
+  }
+}
+input:hover .poze {
+  transition: transform 0.7s ease-in-out;
+  transform: rotate(360deg);
+  width: 350px;
+  height: 240px;
+}
+.volumebtn:hover {
+  transform: translateY(4px);
+  max-width: 75px;
+}
+
+#volumeoffmenu,
+#volumeonmenu {
+  max-height: 65px;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+}
+
+.poze input:focus {
+  transition: transform 1s ease-in-out;
+  transform: rotate(360deg);
+  border-radius: 50px;
+  width: 350px;
+  height: 240px;
+}
+
+.optionsbtn:hover,
+.restartbtn:hover {
+  transition: transform 1.7s ease-in-out;
+  transform: rotate(360deg);
+  max-width: 70px;
+}
+
+.quitbtn:hover,
+.menubtn:hover {
+  transform: translateY(4px);
+  max-width: 65px;
+}
+
+button {
+  height: 270px;
+  width: 240px;
+  width: 350px;
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  border: 5px solid black;
+  border-radius: 16px;
+  transition: 0.3s;
+  background-color: gold;
+}
+
+.poze input {
+  max-width: 250px;
+  margin-top: 15px;
+}
+
+.poze {
+  display: flex;
+  flex: 1 1 1;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.playbtn,
+.backtomenubtn {
+  position: absolute;
+  height: 60px;
+  width: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: blanchedalmond;
+  margin-top: 30px;
+  margin-left: -500px;
+  transition: 0.1s;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.playbtn,
+.playbtnwin {
+  margin-left: 0px;
+  background-color: rgb(16, 158, 16);
+  box-shadow: 1px 2px 8px 1px rgba(16, 158, 16);
+}
+
+.backtomenubtn,
+.backtomenubtnwin {
+  left: 750px;
+  background-color: red;
+  box-shadow: 1px 2px 8px 1px red;
+}
+
+.container-btn-modal {
+  display: flex;
+  border: 3px solid aqua;
+  justify-content: center;
+  gap: 50px;
+  left: 250px;
+}
+
+.playagain-msg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.playagain {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.playbtn:active {
+  transform: translateY(2px);
+}
+button:active {
+  transform: translateY(5px);
+}
+button:hover {
+  opacity: 1;
+}
+
+.quitbtntest {
+  margin-left: -50px;
+}
+
+.startbtn {
+  width: 340px;
+  height: 100px;
+  margin-left: -50px;
+  gap: 50px;
+  font-size: 48px;
+  margin-top: 40px;
+  font-family: "luckiest guy";
+  font-weight: 500;
+  text-shadow: 2px 2px 4px #000000;
+  color: white;
+  border: 4px solid rgb(158, 119, 21);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 20px;
+  margin-left: 0px;
+}
+
+.startbtn:hover {
+  animation: vibrate 3s;
+  animation-iteration-count: infinite;
+}
+
+.play-game,
+.options,
+.quit-game {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.right-icons {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+
+.left-icons {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.options-main .optionsbtn,
+.options-main .quitbtn,
+.options-main .menubtn,
+.options-main .restartbtn,
+.options-main .volumebtn {
+  height: 65px;
+  padding-top: 5px;
+}
+
+.options-main {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  align-items: flex-start;
+}
+
+.title {
+  font-weight: 400;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-6px, -6px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.modal-result,
+.modal-options,
+.modal-player-name {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  padding-top: 150px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-win,
+.modal-lose,
+.modal-restart,
+.modal-quit,
+.modal-options-content,
+.modal-player-name-content {
+  position: relative;
+  background-color: gold;
+  margin: auto;
+  padding: 10px;
+  margin-top: -50px;
+  height: 240px;
+  border: 2px solid black;
+  border-radius: 24px;
+  box-shadow: 4px 12px 20px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 450px;
+  color: black;
+}
+
+.modal-player-name-content {
+  margin-top: 0px;
+  height: 160px;
+  width: 24%;
+}
+.modal-options-content {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+}
+.modal-restart,
+.modal-quit,
+.form-player {
+  margin-top: -15px;
+  height: 180px;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.player-name-icon {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px 100px;
+}
+
+.icon-player {
+  height: 65px;
+  margin-top: 10px;
+}
+
+#quitgame-icon {
+  position: relative;
+}
+
+.modal-options {
+  text-align: center;
+}
+
+input[type="text"] {
+  margin-top: 15px;
+  width: 345px;
+  height: 25px;
+  font-size: 24px;
+  padding: 8px;
+}
+
+#quit-game-icon,
+#play-game-icon {
+  margin-top: 29px;
+  height: 80px;
+}
+
+#quit-game-icon:hover,
+#play-game-icon:hover {
+  transform: translateY(2px);
+}
+
+.quitbtn2 {
+  height: 800px;
+  position: relative;
+  left: 92%;
+  top: 50%;
+}
+
+.modal-result .losegif {
+  height: 150px;
+  width: 450px;
+}
+
+.modal-result .wingif {
+  height: 400px;
+  width: 500px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-text {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.scor-contor {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 28px;
+  color: bisque;
+  padding: 4px 0px;
+  width: 4.5rem;
+  height: 2.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+  background-color: #1a1c20;
+  color: #fff;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3),
+    -2px -2px 3px rgba(255, 255, 255, 0.1), inset 2px 2px 3px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 3px rgba(255, 255, 255, 0.2), 0 0 1px rgba(0, 0, 0, 0.5),
+    0 0 5px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 15px 15px;
+}
+
+.playbtnwin,
+.backtomenubtnwin {
+  position: absolute;
+  height: 60px;
+  width: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 185px;
+  transition: 0.1s;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+}
+.backtomenubtnwin {
+  margin-left: -500px;
+}

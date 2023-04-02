@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    />
+    <title>Main Menu</title>
+    <link rel="icon" type="image/x-icon" href="img/logosite.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main-game-script.js" defer></script>
+    <script src="index-script.js" defer></script>
+  </head>
+  <body>
+    <audio id="menu-page-song" controls autoplay loop hidden>
+    </audio>
+    <div class="header">
+      <h1 class="title">Rock Paper Scissors!</h1>
+    </div>
+    <div class="play-game">
+      <input type="image" src="img/play-icon-menu2.png" id="play-game-icon" />
+    </div>
+    <div class="quit-game">
+      <input
+        type="image"
+        src="img/quit-game-icon-menu2.png"
+        id="quit-game-icon"
+      />
+    </div>
+
+    <input
+      type="image"
+      src="img/volume-on-bg.png"
+      class="volumebtnmenu"
+      id="volumeonmenu"
+    />
+    <input
+      type="image"
+      src="img/volume-off-bg.png"
+      class="volumebtnmenu"
+      id="volumeoffmenu"
+    />
+
+    <form action="main-game.html" method="get">
+      <div class="modal-player-name">
+        <div class="modal-player-name-content">
+          <div class="modal-text">Enter your name:</div>
+          <input
+            type="text"
+            name="user"
+            placeholder="User"
+            id="userInput"
+            required
+          />
+          <div class="player-name-icon">
+            <input
+              type="image"
+              src="img/start-game-icon.png"
+              class="icon-player"
+              id="playgame-icon"
+              onclick="submitForm()"
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
